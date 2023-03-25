@@ -1,56 +1,53 @@
-import './App.css'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import React, { useState } from 'react'
-
-import logo from './logo.svg'
+import { useAppSelector } from './app/hooks'
+import NavMenu from './components/NavMenu'
+import Sider from './components/Sider'
+import { selectMenuState } from './features/state/stateSlice'
+import Dashboard from './pages/Dashboard'
+import Team from './pages/Team'
+import { ColorModeContext, useMode } from './styles/theme'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme, colorMode] = useMode()
+  const isMenuOpen = useAppSelector(selectMenuState)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="header">
-          🚀 Vite + React + Typescript 🤘 & <br />
-          Eslint 🔥+ Prettier
-        </p>
+    <BrowserRouter>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div className="layout">
+            {/* Header */}
+            <header className="header">
+              <NavMenu user="test" />
+            </header>
 
-        <div className="body">
-          <button onClick={() => setCount((count) => count + 1)}>
-            🪂 Click me : {count}
-          </button>
+            {/* Sidebar */}
+            <aside className={` ${isMenuOpen ? 'open' : ''}`}>
+              <Sider open={isMenuOpen} />
+            </aside>
 
-          <p>
-            {' '}
-            Don&apos;t forgot to install Eslint and Prettier in Your Vscode.
-          </p>
+            {/* Main content */}
+            <main className="main">
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/team" element={<Team />} />
+              </Routes>
+            </main>
 
-          <p>
-            Mess up the code in <code>App.tsx </code> and save the file.
-          </p>
-          <p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            {' | '}
-            <a
-              className="App-link"
-              href="https://vitejs.dev/guide/features.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vite Docs
-            </a>
-          </p>
-        </div>
-      </header>
-    </div>
+            {/* Footer */}
+            <footer className="footer">
+              <div style={{ width: '100%' }}>
+                Ant Design ©2023 Created by Ant UED
+              </div>
+            </footer>
+          </div>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </BrowserRouter>
   )
 }
 
