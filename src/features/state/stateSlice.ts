@@ -1,3 +1,4 @@
+import { createTheme, PaletteMode, Theme } from '@mui/material'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 
@@ -6,11 +7,13 @@ import type { RootState } from '../../app/store'
 // Define a type for the slice state
 interface CounterState {
   isMenuOpen: boolean
+  colorMode: PaletteMode
 }
 
 // Define the initial state using that type
 const initialState: CounterState = {
   isMenuOpen: true,
+  colorMode: 'dark',
 }
 
 export const stateSlice = createSlice({
@@ -18,18 +21,22 @@ export const stateSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    toggleSideMenu: (state, action: PayloadAction) => {
+    toggleSideMenu: (state) => {
       state.isMenuOpen = !state.isMenuOpen
     },
-
-    // Use the PayloadAction type to declare the contents of `action.payload`
+    toggleColorMode: (state) => {
+      state.colorMode = state.colorMode === 'dark' ? 'light' : 'dark'
+    },
   },
 })
 
-export const { toggleSideMenu } = stateSlice.actions
+export const { toggleSideMenu, toggleColorMode } = stateSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectMenuState = (state: RootState): boolean =>
   state.state.isMenuOpen
+
+export const selectColorMode = (state: RootState): PaletteMode =>
+  state.state.colorMode
 
 export default stateSlice.reducer

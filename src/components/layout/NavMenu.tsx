@@ -6,29 +6,33 @@ import {
   Typography,
   useTheme,
 } from '@mui/material'
-import React, { useContext } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 
-import { useAppDispatch } from '../app/hooks'
-import { toggleSideMenu } from '../features/state/stateSlice'
-import { ColorModeContext, tokens } from '../styles/theme'
+import { useAppDispatch } from '../../app/hooks'
+import {
+  toggleColorMode,
+  toggleSideMenu,
+} from '../../features/state/stateSlice'
+import { tokens } from '../../styles/theme'
 
-type Props = {
-  user: string
-}
-const NavMenu = ({ user }: Props): JSX.Element => {
+const NavMenu = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
-  const colorMode = useContext(ColorModeContext)
 
   return (
     <Box
       className="navbar"
-      sx={{ backgroundColor: colors.backgroundBlack[100] }}
+      justifyContent="space-between"
+      sx={{ backgroundColor: colors.backgroundBlack[700] }}
     >
-      <Grid width="200px">
+      <Grid
+        container
+        width="200px"
+        // justifyContent="space-between"
+        alignItems="center"
+      >
         <Typography
           display="inline"
           className="branding-text"
@@ -38,15 +42,17 @@ const NavMenu = ({ user }: Props): JSX.Element => {
         >
           Logo
         </Typography>
+
         <Button
           onClick={() => {
             dispatch(toggleSideMenu())
           }}
         >
-          <GiHamburgerMenu />
+          <GiHamburgerMenu color={colors.grey[100]} />
         </Button>
       </Grid>
-      <IconButton onClick={colorMode.toggleColorMode}>
+
+      <IconButton onClick={() => dispatch(toggleColorMode())}>
         {theme.palette.mode === 'dark' ? (
           <MdOutlineDarkMode />
         ) : (

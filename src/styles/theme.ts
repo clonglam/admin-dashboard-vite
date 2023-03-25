@@ -1,6 +1,4 @@
 import { PaletteMode } from '@mui/material'
-import { createTheme } from '@mui/material/styles'
-import { createContext, useMemo, useState } from 'react'
 
 // color design tokens export
 export const tokens = (mode: PaletteMode) => ({
@@ -63,7 +61,7 @@ export const tokens = (mode: PaletteMode) => ({
         },
         backgroundBlack: {
           100: '#222',
-          900: '#2c2c2c',
+          700: '#2c2c2c',
         },
       }
     : {
@@ -124,13 +122,13 @@ export const tokens = (mode: PaletteMode) => ({
         },
         backgroundBlack: {
           100: '#222',
-          900: '#2c2c2c',
+          700: '#fcfcfc',
         },
       }),
 })
 
 // mui theme settings
-export const themeSettings = (mode: PaletteMode) => {
+export const getDesignTokens = (mode: PaletteMode) => {
   const colors = tokens(mode)
   return {
     palette: {
@@ -150,7 +148,7 @@ export const themeSettings = (mode: PaletteMode) => {
               light: colors.grey[100],
             },
             background: {
-              default: colors.backgroundBlack[900],
+              default: colors.backgroundBlack[700],
             },
           }
         : {
@@ -202,23 +200,23 @@ export const themeSettings = (mode: PaletteMode) => {
   }
 }
 
-// context for color mode
-export const ColorModeContext = createContext({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  toggleColorMode: () => {},
-})
+// // context for color mode
+// export const ColorModeContext = createContext({
+//   // eslint-disable-next-line @typescript-eslint/no-empty-function
+//   toggleColorMode: () => {},
+// })
 
-export const useMode = () => {
-  const [mode, setMode] = useState<PaletteMode>('dark')
+// export const useMode = () => {
+//   const [mode, setMode] = useState<PaletteMode>('dark')
 
-  const colorMode = useMemo(
-    () => ({
-      toggleColorMode: () =>
-        setMode((prev) => (prev === 'light' ? 'dark' : 'light')),
-    }),
-    []
-  )
+//   const colorMode = useMemo(
+//     () => ({
+//       toggleColorMode: () =>
+//         setMode((prev) => (prev === 'light' ? 'dark' : 'light')),
+//     }),
+//     []
+//   )
 
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
-  return [theme, colorMode]
-}
+//   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])
+//   return [theme, colorMode]
+// }

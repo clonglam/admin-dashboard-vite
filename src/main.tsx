@@ -3,6 +3,7 @@ import './styles/index.scss'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
 import { store } from './app/store'
@@ -10,7 +11,9 @@ import { store } from './app/store'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 )
