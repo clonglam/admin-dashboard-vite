@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Grid, Stack, Typography, useTheme } from '@mui/material'
 import React from 'react'
 
 import { tokens } from '../../styles/theme'
@@ -7,9 +7,10 @@ interface Props {
   title: string
   dateRange: string
   content: string
+  rate: number
 }
 
-const StatSmallCard = ({ title, dateRange, content }: Props) => {
+const StatSmallCard = ({ title, dateRange, content, rate }: Props) => {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 
@@ -47,7 +48,7 @@ const StatSmallCard = ({ title, dateRange, content }: Props) => {
           color={colors.greenAccent[200]}
           bgcolor={colors.greenAccent[800]}
         >
-          +14%
+          {rate > 0 ? `+ ${rate} %` : `- ${rate} %`}
         </Typography>
 
         <Typography>Since last month</Typography>
