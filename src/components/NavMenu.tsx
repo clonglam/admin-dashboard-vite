@@ -63,6 +63,9 @@ const NavMenu = (): JSX.Element => {
         <IconButton onClick={() => console.log('Alert clicked')}>
           <AiOutlineBell />
         </IconButton>
+        <IconButton onClick={() => console.log('Setting clicked')}>
+          <FiSettings />
+        </IconButton>
       </Grid>
     </Box>
   )
