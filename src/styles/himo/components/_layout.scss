@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $sidebar-opened-width: 200px;
 $sidebar-closed-width: 80px;
 
@@ -64,7 +66,7 @@ main {
 }
 
 section {
-  padding: $base-padding/4 $base-padding;
+  padding: math.div($base-padding, 4) $base-padding;
   .title {
     font-size: $font-size-lg;
   }
