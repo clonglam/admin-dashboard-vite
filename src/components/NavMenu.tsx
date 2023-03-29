@@ -6,15 +6,14 @@ import {
   Typography,
   useTheme,
 } from '@mui/material'
+import { AiOutlineBell } from 'react-icons/ai'
+import { FiSettings } from 'react-icons/fi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 
-import { useAppDispatch } from '../../app/hooks'
-import {
-  toggleColorMode,
-  toggleSideMenu,
-} from '../../features/state/stateSlice'
-import { tokens } from '../../styles/theme'
+import { useAppDispatch } from '../app/hooks'
+import { toggleColorMode, toggleSideMenu } from '../features/state/stateSlice'
+import { tokens } from '../styles/theme'
 
 const NavMenu = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -52,13 +51,19 @@ const NavMenu = (): JSX.Element => {
         </Button>
       </Grid>
 
-      <IconButton onClick={() => dispatch(toggleColorMode())}>
-        {theme.palette.mode === 'dark' ? (
-          <MdOutlineDarkMode />
-        ) : (
-          <MdOutlineLightMode />
-        )}
-      </IconButton>
+      <Grid>
+        <IconButton onClick={() => dispatch(toggleColorMode())}>
+          {theme.palette.mode === 'dark' ? (
+            <MdOutlineDarkMode />
+          ) : (
+            <MdOutlineLightMode />
+          )}
+        </IconButton>
+
+        <IconButton onClick={() => console.log('Alert clicked')}>
+          <AiOutlineBell />
+        </IconButton>
+      </Grid>
     </Box>
   )
 }

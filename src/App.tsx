@@ -3,12 +3,13 @@ import { useMemo } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import { useAppSelector } from './app/hooks'
-import NavMenu from './components/layout/NavMenu'
-import Sider from './components/layout/Sider'
+import NavMenu from './components/NavMenu'
+import Sider from './components/Sider'
 import { selectColorMode, selectMenuState } from './features/state/stateSlice'
 import Dashboard from './pages/Dashboard'
+import Member from './pages/Member'
 import Team from './pages/Team'
-import { getDesignTokens } from './styles/theme'
+import { getDesignTokens, tokens } from './styles/theme'
 
 function App() {
   const isMenuOpen = useAppSelector(selectMenuState)
@@ -18,6 +19,7 @@ function App() {
     () => createTheme(getDesignTokens(colorMode)),
     [colorMode]
   )
+  const colors = tokens(theme.palette.mode)
 
   return (
     <ThemeProvider theme={theme}>
@@ -25,7 +27,7 @@ function App() {
       <div className="layout">
         {/* Header */}
         <header className="header">
-          <NavMenu user="test" />
+          <NavMenu />
         </header>
 
         {/* Sidebar */}
@@ -34,11 +36,12 @@ function App() {
         </aside>
 
         {/* Main content */}
-        <main className="main">
+        <main className="main" style={{ background: colors.grey[800] }}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/member" element={<Member />} />
           </Routes>
         </main>
 
