@@ -33,6 +33,12 @@ const menus = [
     icon: AiOutlineTeam,
     component: '/member',
   },
+  {
+    key: '/app/Orders',
+    title: 'Orders',
+    icon: AiOutlineTeam,
+    component: '/orders',
+  },
 ]
 
 const Sider = ({ open }: Props): JSX.Element => {

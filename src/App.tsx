@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import { useAppSelector } from './app/hooks'
 import NavMenu from './components/NavMenu'
+import Orders from './components/orders'
 import Sider from './components/Sider'
 import { selectColorMode, selectMenuState } from './features/state/stateSlice'
 import Dashboard from './pages/Dashboard'
@@ -42,6 +43,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/team" element={<Team />} />
             <Route path="/member" element={<Member />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </main>
 

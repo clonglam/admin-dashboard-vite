@@ -3,16 +3,7 @@ import * as echarts from 'echarts'
 import ReactECharts from 'echarts-for-react'
 import React from 'react'
 
-import { tokens } from '../styles/theme'
-
-interface Props {
-  title: string
-}
-
-const LineEChart = ({ title }: Props) => {
-  const theme = useTheme()
-  const colors = tokens(theme.palette.mode)
-
+const LineEChart = () => {
   const options = {
     grid: { top: 8, right: 8, bottom: 24, left: 36 },
     xAxis: {
@@ -34,14 +25,7 @@ const LineEChart = ({ title }: Props) => {
     },
   }
 
-  return (
-    <Box borderRadius={2} p={3} sx={{ background: colors.primary[400] }}>
-      <Typography variant="body1" mb={3}>
-        {title}
-      </Typography>
-      <ReactECharts option={options} />
-    </Box>
-  )
+  return <ReactECharts option={options} />
 }
 
 export default LineEChart
