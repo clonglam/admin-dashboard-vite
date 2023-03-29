@@ -1,9 +1,9 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import _ from 'lodash'
-import React from 'react'
 
 import StatSmallCard from '../components/cards/StatSmallCard'
-import { DashboardDataType, data } from '../data/dashboardData'
+import LineEChart from '../components/LineEChart'
+import { DashboardDataType, data } from '../data/mockdata'
 
 const Dashboard = () => {
   return (
@@ -27,12 +27,7 @@ const Dashboard = () => {
           })}
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box
-            borderRadius={2}
-            width={'100%'}
-            height={'100%'}
-            sx={{ backgroundColor: 'gold' }}
-          ></Box>
+          <LineEChart title="Revenue Generated" />
         </Grid>
       </Grid>
     </div>

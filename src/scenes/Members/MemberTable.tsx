@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
 import React from 'react'
 
-import memberData from '../../data/memberData'
+import { memberData } from '../../data/mockdata'
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 90 },
