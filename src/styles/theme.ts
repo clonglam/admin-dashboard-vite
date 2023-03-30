@@ -19,11 +19,11 @@ export const tokens = (mode: PaletteMode) => ({
           100: '#d0d1d5',
           200: '#a1a4ab',
           300: '#727681',
-          400: '#1F2A40',
+          400: '#4783db',
           500: '#141b2d',
-          600: '#101624',
+          600: '#243143',
           700: '#0c101b',
-          800: '#080b12',
+          800: '#1b2735',
           900: '#040509',
         },
         greenAccent: {
@@ -59,9 +59,14 @@ export const tokens = (mode: PaletteMode) => ({
           800: '#2a2d64',
           900: '#151632',
         },
-        backgroundBlack: {
-          100: '#222',
-          700: '#2c2c2c',
+        yellowAccent: {
+          500: '#ff9800',
+        },
+        chartColors: {
+          0: '#4681da',
+          1: '#f44336',
+          2: '#ff9800',
+          3: '#eeeeee',
         },
       }
     : {
@@ -77,25 +82,25 @@ export const tokens = (mode: PaletteMode) => ({
           900: '#e0e0e0',
         },
         primary: {
-          100: '#040509',
-          200: '#080b12',
+          100: '#f6f9fc',
+          200: '#f6f9fc',
           300: '#0c101b',
-          400: '#f2f0f0', // manually changed
+          400: '#74a0e3', // manually changed
           500: '#141b2d',
-          600: '#1F2A40',
+          600: '#ffffff',
           700: '#727681',
-          800: '#a1a4ab',
-          900: '#d0d1d5',
+          800: '#f6fafc',
+          900: '#fff',
         },
         greenAccent: {
           100: '#0f2922',
-          200: '#1e5245',
+          200: '#49af4e',
           300: '#2e7c67',
           400: '#3da58a',
           500: '#4cceac',
           600: '#70d8bd',
           700: '#94e2cd',
-          800: '#b7ebde',
+          800: '#eef7ed',
           900: '#dbf5ee',
         },
         redAccent: {
@@ -120,9 +125,14 @@ export const tokens = (mode: PaletteMode) => ({
           800: '#c3c6fd',
           900: '#e1e2fe',
         },
-        backgroundBlack: {
-          100: '#222',
-          700: '#fcfcfc',
+        yellowAccent: {
+          500: '#ff9800',
+        },
+        chartColors: {
+          0: '#4681da',
+          1: '#f44336',
+          2: '#ff9800',
+          3: '#eeeeee',
         },
       }),
 })
@@ -148,13 +158,13 @@ export const getDesignTokens = (mode: PaletteMode) => {
               light: colors.grey[100],
             },
             background: {
-              default: colors.backgroundBlack[700],
+              default: colors.primary[800],
             },
           }
         : {
             // palette values for light mode
             primary: {
-              main: colors.primary[100],
+              main: '#fff',
             },
             secondary: {
               main: colors.greenAccent[500],
@@ -165,7 +175,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
               light: colors.grey[100],
             },
             background: {
-              default: '#fcfcfc',
+              default: 'red',
             },
           }),
     },

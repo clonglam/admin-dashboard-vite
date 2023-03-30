@@ -1,42 +1,71 @@
+import { useTheme } from '@mui/material'
 import ReactECharts from 'echarts-for-react'
 import React, { useState } from 'react'
 
+import { tokens } from '../styles/theme'
+
 const PieChart = () => {
   const [count, setCount] = useState(0)
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
   const option = {
+    color: [
+      colors.chartColors[0],
+      colors.chartColors[1],
+      colors.chartColors[2],
+      colors.chartColors[3],
+    ],
+    textStyle: {
+      color: colors.grey[500],
+    },
     title: {
-      text: '某站点用户访问来源',
-      subtext: '纯属虚构',
+      text: 'Traffic acquisition',
       x: 'center',
     },
     tooltip: {
       trigger: 'item',
       formatter: '{a} <br/>{b} : {c} ({d}%)',
     },
+    stateAnimation: {
+      animation: 'auto',
+      animationDuration: 1000,
+      animationDurationUpdate: 500,
+      animationEasing: 'cubicInOut',
+      animationEasingUpdate: 'cubicInOut',
+      animationThreshold: 2000,
+      progressiveThreshold: 3000,
+      progressive: 400,
+      hoverLayerThreshold: 3000,
+      useUTC: false,
+    },
     legend: {
       orient: 'vertical',
       left: 'left',
-      data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
+      data: [
+        'Direct Visit',
+        'Email Marketing',
+        'Video Advertising',
+        'Organic Search',
+      ],
     },
     series: [
       {
-        name: '访问来源',
+        name: 'Traffic acquisition',
         type: 'pie',
-        radius: '55%',
+        radius: ['40%', '70%'],
         center: ['50%', '60%'],
         data: [
-          { value: 335, name: '直接访问' },
-          { value: 310, name: '邮件营销' },
-          { value: 234, name: '联盟广告' },
-          { value: 135, name: '视频广告' },
-          { value: 1548, name: '搜索引擎' },
+          { value: 335, name: 'Direct Visit' },
+          { value: 310, name: 'Email Marketing' },
+          { value: 135, name: 'Video Advertising' },
+          { value: 1548, name: 'Organic Search' },
         ],
         itemStyle: {
           emphasis: {
             shadowBlur: 10,
             shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
+            // shadowColor: 'rgba(0, 0, 0, 0.5)',
           },
         },
       },

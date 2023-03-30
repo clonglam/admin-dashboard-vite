@@ -33,7 +33,7 @@ const Dashboard = () => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Box borderRadius={2} p={3} sx={{ background: colors.primary[400] }}>
+          <Box borderRadius={2} p={3} sx={{ background: colors.primary[600] }}>
             <Typography variant="body1" mb={3}>
               Revenue Generate
             </Typography>
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
       <Grid container>
         <Grid item xs={12} md={8}>
-          <Box borderRadius={2} p={3} sx={{ background: colors.primary[400] }}>
+          <Box borderRadius={2} p={3} sx={{ background: colors.primary[600] }}>
             <PieChart />
           </Box>
         </Grid>

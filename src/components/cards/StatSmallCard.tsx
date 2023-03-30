@@ -15,7 +15,7 @@ const StatSmallCard = ({ title, dateRange, content, rate }: Props) => {
   const colors = tokens(theme.palette.mode)
 
   return (
-    <Box width="100%" bgcolor={colors.primary[400]} p={2}>
+    <Box width="100%" bgcolor={colors.primary[600]} p={2}>
       <Stack direction="row" justifyContent="space-between" width="100%">
         <Typography variant="body1">{title}</Typography>
         <Typography
@@ -23,7 +23,7 @@ const StatSmallCard = ({ title, dateRange, content, rate }: Props) => {
           borderRadius={2}
           px={1}
           py={0.5}
-          bgcolor={colors.primary[600]}
+          bgcolor={colors.primary[400]}
           //   color={colors.backgroundBlack[100]}
         >
           {dateRange}

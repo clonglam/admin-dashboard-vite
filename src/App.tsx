@@ -37,7 +37,7 @@ function App() {
         </aside>
 
         {/* Main content */}
-        <main className="main" style={{ background: colors.grey[800] }}>
+        <main className="main" style={{ background: colors.primary[800] }}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />

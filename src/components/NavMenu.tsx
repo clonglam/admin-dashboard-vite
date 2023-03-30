@@ -24,7 +24,7 @@ const NavMenu = (): JSX.Element => {
     <Box
       className="navbar"
       justifyContent="space-between"
-      sx={{ backgroundColor: colors.backgroundBlack[700] }}
+      sx={{ backgroundColor: colors.primary[600] }}
     >
       <Grid
         container

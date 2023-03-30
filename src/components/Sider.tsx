@@ -46,7 +46,7 @@ const Sider = ({ open }: Props): JSX.Element => {
   const colors = tokens(theme.palette.mode)
 
   return (
-    <Box sx={{ backgroundColor: colors.backgroundBlack[700] }}>
+    <Box sx={{ backgroundColor: colors.primary[600] }}>
       <List>
         <div className="sidebar-content">
           {menus.map((item: IFMenu) => (
