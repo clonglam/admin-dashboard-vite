@@ -49,9 +49,7 @@ function App() {
 
         {/* Footer */}
         <footer className="footer">
-          <div style={{ width: '100%' }}>
-            Ant Design ©2023 Created by Ant UED
-          </div>
+          <div style={{ width: '100%' }}>Design by Hugo</div>
         </footer>
       </div>
     </ThemeProvider>

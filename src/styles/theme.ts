@@ -209,24 +209,3 @@ export const getDesignTokens = (mode: PaletteMode) => {
     },
   }
 }
-
-// // context for color mode
-// export const ColorModeContext = createContext({
-//   // eslint-disable-next-line @typescript-eslint/no-empty-function
-//   toggleColorMode: () => {},
-// })
-
-// export const useMode = () => {
-//   const [mode, setMode] = useState<PaletteMode>('dark')
-
-//   const colorMode = useMemo(
-//     () => ({
-//       toggleColorMode: () =>
-//         setMode((prev) => (prev === 'light' ? 'dark' : 'light')),
-//     }),
-//     []
-//   )
-
-//   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])
-//   return [theme, colorMode]
-// }

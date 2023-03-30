@@ -22,6 +22,9 @@ const PieChart = () => {
     title: {
       text: 'Traffic acquisition',
       x: 'center',
+      textStyle: {
+        color: colors.grey[200],
+      },
     },
     tooltip: {
       trigger: 'item',
@@ -48,6 +51,14 @@ const PieChart = () => {
         'Video Advertising',
         'Organic Search',
       ],
+      textStyle: {
+        color: colors.grey[200],
+        textBorderWidth: 0,
+      },
+    },
+    label: {
+      color: colors.grey[200],
+      textborderWidth: 0,
     },
     series: [
       {
@@ -61,10 +72,14 @@ const PieChart = () => {
           { value: 135, name: 'Video Advertising' },
           { value: 1548, name: 'Organic Search' },
         ],
+        textStyle: {
+          color: colors.grey[200],
+          textBorderWidth: 0,
+        },
         itemStyle: {
           emphasis: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
+            // shadowBlur: 10,
+            // shadowOffsetX: 0,
             // shadowColor: 'rgba(0, 0, 0, 0.5)',
           },
         },
