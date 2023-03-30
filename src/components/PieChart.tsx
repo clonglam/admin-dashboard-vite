@@ -19,13 +19,13 @@ const PieChart = () => {
     textStyle: {
       color: colors.grey[500],
     },
-    title: {
-      text: 'Traffic acquisition',
-      x: 'center',
-      textStyle: {
-        color: colors.grey[200],
-      },
-    },
+    // title: {
+    //   text: 'Traffic acquisition',
+    //   x: 'center',
+    //   textStyle: {
+    //     color: colors.grey[200],
+    //   },
+    // },
     tooltip: {
       trigger: 'item',
       formatter: '{a} <br/>{b} : {c} ({d}%)',

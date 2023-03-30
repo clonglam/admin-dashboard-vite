@@ -175,7 +175,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
               light: colors.grey[100],
             },
             background: {
-              default: 'red',
+              default: colors.grey[100],
             },
           }),
     },

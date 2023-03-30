@@ -1,7 +1,8 @@
-import { Box, Grid, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Divider, Grid, Stack, Typography, useTheme } from '@mui/material'
 import _ from 'lodash'
 
 import StatSmallCard from '../components/cards/StatSmallCard'
+import Layout from '../components/Layout'
 import LineEChart from '../components/LineEChart'
 import PieChart from '../components/PieChart'
 import { DashboardDataType, data } from '../data/mockdata'
@@ -12,9 +13,10 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode)
 
   return (
-    <Stack rowGap={2}>
-      <Typography>Dashboard</Typography>
-
+    <Layout
+      section="Dashboard"
+      description={`Welcome back. This is the custom dashboard created by hugo. Free Feel to visit my Github or my website.`}
+    >
       <Grid container spacing={2}>
         <Grid container item xs={12} md={6} width="100%" spacing={2}>
           {_.toArray(data as DashboardDataType).map((section) => {
@@ -44,14 +46,17 @@ const Dashboard = () => {
       </Grid>
 
       <Grid container>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={4}>
           <Box borderRadius={2} p={3} sx={{ background: colors.primary[600] }}>
+            <Typography variant="body1" mb={3}>
+              Traffic Acquisition
+            </Typography>
             <PieChart />
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}></Grid>
+        <Grid item xs={12} md={8}></Grid>
       </Grid>
-    </Stack>
+    </Layout>
   )
 }
 
