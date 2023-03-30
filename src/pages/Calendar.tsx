@@ -15,6 +15,7 @@ import {
 } from '@mui/material'
 import { useState } from 'react'
 
+import Layout from '../components/Layout'
 import { tokens } from '../styles/theme'
 
 const Calendar = () => {
@@ -49,9 +50,13 @@ const Calendar = () => {
   }
 
   return (
-    <Box m="20px">
+    <Layout
+      section="Calendar"
+      description="This is an interactive calendar component."
+    >
       <Box display="flex" justifyContent="space-between">
         {/* CALENDAR SIDEBAR */}
+
         <Box
           sx={{
             flex: '1 1 20%',
@@ -127,7 +132,7 @@ const Calendar = () => {
           />
         </Box>
       </Box>
-    </Box>
+    </Layout>
   )
 }
 

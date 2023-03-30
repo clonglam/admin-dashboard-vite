@@ -6,6 +6,7 @@ import { useAppSelector } from './app/hooks'
 import NavMenu from './components/NavMenu'
 import Sider from './components/Sider'
 import { selectColorMode, selectMenuState } from './features/state/stateSlice'
+import ApplicationForm from './pages/ApplicationForm'
 import Calendar from './pages/Calendar'
 import Dashboard from './pages/Dashboard'
 import Member from './pages/Member'
@@ -21,6 +22,7 @@ function App() {
     () => createTheme(getDesignTokens(colorMode)),
     [colorMode]
   )
+
   const colors = tokens(theme.palette.mode)
 
   return (
@@ -46,6 +48,7 @@ function App() {
             <Route path="/member" element={<Member />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/applicationform" element={<ApplicationForm />} />
           </Routes>
         </main>
 

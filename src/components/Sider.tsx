@@ -45,6 +45,12 @@ const menus = [
     icon: AiOutlineTeam,
     component: '/calendar',
   },
+  {
+    key: '/app/ApplicationForm',
+    title: 'ApplicationForm',
+    icon: AiOutlineTeam,
+    component: '/applicationform',
+  },
 ]
 
 const Sider = ({ open }: Props): JSX.Element => {
