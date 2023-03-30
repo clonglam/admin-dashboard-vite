@@ -4,11 +4,11 @@ import { Route, Routes } from 'react-router-dom'
 
 import { useAppSelector } from './app/hooks'
 import NavMenu from './components/NavMenu'
-import Orders from './components/orders'
 import Sider from './components/Sider'
 import { selectColorMode, selectMenuState } from './features/state/stateSlice'
 import Dashboard from './pages/Dashboard'
 import Member from './pages/Member'
+import Orders from './pages/Orders'
 import Team from './pages/Team'
 import { getDesignTokens, tokens } from './styles/theme'
 

@@ -1,5 +1,6 @@
 import {
   Box,
+  colors,
   InputBase,
   Paper,
   Skeleton,
@@ -10,6 +11,7 @@ import {
   TableHead,
   TablePagination,
   TableRow,
+  useTheme,
 } from '@mui/material'
 import type {
   Column,
@@ -30,6 +32,7 @@ import type { Dispatch, SetStateAction } from 'react'
 import React from 'react'
 import { AiOutlineSortAscending, AiOutlineSortDescending } from 'react-icons/ai'
 
+import { tokens } from '../../styles/theme'
 import { fuzzyFilter } from './fuzzyFilter'
 import TablePaginationActions from './tableAction'
 
@@ -57,7 +60,8 @@ const CustomTable = ({
   hiddenItem,
   setGlobalFilter,
 }: Props): JSX.Element => {
-  // const [sorting, setSorting] = React.useState<SortingState>([])
+  const theme = useTheme()
+  const colors = tokens(theme.palette.mode)
 
   const data = React.useMemo(
     () => (isLoading ? Array(30).fill({}) : tableData),
@@ -100,7 +104,7 @@ const CustomTable = ({
   const { pageSize, pageIndex } = table.getState().pagination
 
   return (
-    <Box sx={{ width: '100%', background: 'white' }}>
+    <Box sx={{ width: '100%', background: colors.primary[600] }}>
       <TablePagination
         rowsPerPageOptions={[5, 10, 25, { label: 'All', value: data.length }]}
         component="div"
@@ -120,13 +124,14 @@ const CustomTable = ({
         }}
         ActionsComponent={TablePaginationActions}
       />
-      <TableContainer component={Paper} sx={{ maxHeight: 540 }}>
+
+      <TableContainer component={Paper} sx={{ minHeight: 540 }}>
         <Table aria-label="Users table">
-          <TableHead className="" sx={{ background: '#fafafc' }}>
+          <TableHead className="" sx={{ background: colors.primary[600] }}>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
                 key={headerGroup.id}
-                sx={{ height: '40px', background: '#fafafc' }}
+                sx={{ height: '40px', background: colors.primary[600] }}
               >
                 {headerGroup.headers.map((header) => (
                   <TableCell key={header.id}>
@@ -156,12 +161,6 @@ const CustomTable = ({
                             </span>
                           ),
                         }[header.column.getIsSorted() as string] ?? null}
-                        {/* 
-                          {header.column.getCanFilter() ? (
-                            <div>
-                              <Filter column={header.column} table={table} />
-                            </div>
-                          ) : null} */}
                       </div>
                     )}
                   </TableCell>
@@ -171,26 +170,32 @@ const CustomTable = ({
           </TableHead>
 
           <TableBody>
-            {table.getRowModel().rows.map((row) => {
-              return (
-                <TableRow key={row.id}>
-                  {row.getVisibleCells().map((cell, index) => {
-                    return isLoading ? (
-                      <TableCell key={`${row.id}_${index}`}>
-                        <Skeleton width="100%" height="100%" />
-                      </TableCell>
-                    ) : (
-                      <TableCell key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </TableCell>
-                    )
-                  })}
-                </TableRow>
-              )
-            })}
+            {table.getRowModel().rows.length === 0 ? (
+              <TableRow>
+                <TableCell colSpan={6}>There is no Data</TableCell>
+              </TableRow>
+            ) : (
+              table.getRowModel().rows.map((row) => {
+                return (
+                  <TableRow key={row.id}>
+                    {row.getVisibleCells().map((cell, index) => {
+                      return isLoading ? (
+                        <TableCell key={`${row.id}_${index}`}>
+                          <Skeleton width="100%" height="100%" />
+                        </TableCell>
+                      ) : (
+                        <TableCell key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </TableCell>
+                      )
+                    })}
+                  </TableRow>
+                )
+              })
+            )}
           </TableBody>
         </Table>
       </TableContainer>

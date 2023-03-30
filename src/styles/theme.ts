@@ -68,6 +68,9 @@ export const tokens = (mode: PaletteMode) => ({
           2: '#ff9800',
           3: '#eeeeee',
         },
+        success: '#4caf4f',
+        error: '#f44335',
+        warning: '#f47c02',
       }
     : {
         grey: {
@@ -134,6 +137,9 @@ export const tokens = (mode: PaletteMode) => ({
           2: '#ff9800',
           3: '#eeeeee',
         },
+        success: '#4caf4f',
+        error: '#f44335',
+        warning: '#f47c02',
       }),
 })
 

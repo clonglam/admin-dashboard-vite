@@ -346,3 +346,98 @@ export const mockDataContacts = [
     registrarId: 92197,
   },
 ]
+
+export const mockOrderData = [
+  {
+    id: '#000010',
+    product: 'Backpack',
+    date: '2023-01-02',
+    total: 32,
+    paymentMethod: 'Visa',
+    orderStatus: 'Shipped',
+  },
+  {
+    id: '#000011',
+    product: 'Glass Teapot',
+    date: '2023-01-06',
+    total: 22,
+    paymentMethod: 'Master',
+    orderStatus: 'Cancelled',
+  },
+  {
+    id: '#000012',
+    product: 'Glass Teapot',
+    date: '2023-01-21',
+    total: 48,
+    paymentMethod: 'PayPal',
+    orderStatus: 'Processing',
+  },
+  {
+    id: '#000013',
+    product: 'Glass Teapot',
+    date: '2023-01-06',
+    total: 32,
+    paymentMethod: 'Master',
+    orderStatus: 'Shipped',
+  },
+  {
+    id: '#000014',
+    product: 'Party material',
+    date: '2023-01-06',
+    total: 32,
+    paymentMethod: 'Master',
+    orderStatus: 'Shipped',
+  },
+
+  {
+    id: '#000017',
+    product: 'Loremm',
+    date: '2023-01-06',
+    total: 15,
+    paymentMethod: 'Visa',
+    orderStatus: 'Shipped',
+  },
+  {
+    id: '#000018',
+    product: 'Tea',
+    date: '2023-01-06',
+    total: 2,
+    paymentMethod: 'Master',
+    orderStatus: 'Shipped',
+  },
+  {
+    id: '#000019',
+    product: 'Jam',
+    date: '2023-01-22',
+    total: 61,
+    paymentMethod: 'Visa',
+    orderStatus: 'Shipped',
+  },
+  {
+    id: '#000020',
+    product: 'Mosue',
+    date: '2023-01-06',
+    total: 32,
+    paymentMethod: 'Master',
+    orderStatus: 'Processing',
+  },
+  {
+    id: '#000021',
+    product: 'Keyboard',
+    date: '2023-01-06',
+    total: 32,
+    paymentMethod: 'Visa',
+    orderStatus: 'Processing',
+  },
+  {
+    id: '#000022',
+    product: 'Cake',
+    date: '2023-01-06',
+    total: 32,
+    paymentMethod: 'Master',
+    orderStatus: 'Shipped',
+  },
+]
+
+export type OrderStatus = 'Shipped' | 'Cancelled' | 'Processing'
+export type PaymentMethod = 'Visa' | 'PayPal' | 'Mastercard'
