@@ -6,6 +6,7 @@ import { useAppSelector } from './app/hooks'
 import NavMenu from './components/NavMenu'
 import Sider from './components/Sider'
 import { selectColorMode, selectMenuState } from './features/state/stateSlice'
+import Calendar from './pages/Calendar'
 import Dashboard from './pages/Dashboard'
 import Member from './pages/Member'
 import Orders from './pages/Orders'
@@ -44,6 +45,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/member" element={<Member />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/calendar" element={<Calendar />} />
           </Routes>
         </main>
 
