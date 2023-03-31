@@ -1,4 +1,4 @@
-import { Box, Divider, Grid, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Grid, Typography, useTheme } from '@mui/material'
 import _ from 'lodash'
 
 import StatSmallCard from '../components/cards/StatSmallCard'

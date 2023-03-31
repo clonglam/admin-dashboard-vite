@@ -14,6 +14,8 @@ import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 import { useAppDispatch } from '../app/hooks'
 import { toggleColorMode, toggleSideMenu } from '../features/state/stateSlice'
 import { tokens } from '../styles/theme'
+import LoginButton from './LoginButton'
+import LogoutButton from './LogoutButton'
 
 const NavMenu = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -66,6 +68,8 @@ const NavMenu = (): JSX.Element => {
         <IconButton onClick={() => console.log('Setting clicked')}>
           <FiSettings />
         </IconButton>
+        <LoginButton />
+        <LogoutButton />
       </Grid>
     </Box>
   )
