@@ -1,6 +1,6 @@
 import { Grid, useTheme } from '@mui/material'
 
-import Layout from '../components/Layout'
+import Layout from '../components/layoutComponents/Layout'
 import { mockProjectData } from '../data/mockdata'
 import ProjectCard from '../scenes/Projects/projectCard'
 import { tokens } from '../styles/theme'

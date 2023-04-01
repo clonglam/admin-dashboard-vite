@@ -1,11 +1,9 @@
 import { useTheme } from '@mui/material'
 import ReactECharts from 'echarts-for-react'
-import React, { useState } from 'react'
 
-import { tokens } from '../styles/theme'
+import { tokens } from '../../styles/theme'
 
 const PieChart = () => {
-  const [count, setCount] = useState(0)
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 
@@ -19,13 +17,6 @@ const PieChart = () => {
     textStyle: {
       color: colors.grey[500],
     },
-    // title: {
-    //   text: 'Traffic acquisition',
-    //   x: 'center',
-    //   textStyle: {
-    //     color: colors.grey[200],
-    //   },
-    // },
     tooltip: {
       trigger: 'item',
       formatter: '{a} <br/>{b} : {c} ({d}%)',
@@ -78,38 +69,16 @@ const PieChart = () => {
         },
         itemStyle: {
           emphasis: {
-            // shadowBlur: 10,
-            // shadowOffsetX: 0,
-            // shadowColor: 'rgba(0, 0, 0, 0.5)',
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)',
           },
         },
       },
     ],
   }
 
-  function onChartReady(echarts: any) {
-    console.log('echarts is ready', echarts)
-  }
-
-  function onChartClick(param: any, echarts: any) {
-    console.log(param, echarts)
-    setCount(count + 1)
-  }
-
-  function onChartLegendselectchanged(param: any, echarts: any) {
-    console.log(param, echarts)
-  }
-
-  return (
-    <ReactECharts
-      option={option}
-      onChartReady={onChartReady}
-      onEvents={{
-        click: onChartClick,
-        legendselectchanged: onChartLegendselectchanged,
-      }}
-    />
-  )
+  return <ReactECharts option={option} onEvents={{}} />
 }
 
 export default PieChart

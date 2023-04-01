@@ -1,8 +1,8 @@
 import { Box, useTheme } from '@mui/material'
 import { useState } from 'react'
 
-import routes from '../routes/config'
-import { tokens } from '../styles/theme'
+import routes from '../../../routes/config'
+import { tokens } from '../../../styles/theme'
 import SiderMenu from './SiderMenu'
 
 interface Props {

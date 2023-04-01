@@ -5,7 +5,7 @@ import StatSmallCard from '../components/cards/StatSmallCard'
 import BarChart from '../components/charts/BarChart'
 import LineEChart from '../components/charts/LineEChart'
 import Layout from '../components/Layout'
-import PieChart from '../components/PieChart'
+import PieChart from '../components/charts/PieChart'
 import { DashboardDataType, data } from '../data/mockdata'
 import { tokens } from '../styles/theme'
 

@@ -13,9 +13,9 @@ import * as React from 'react'
 import { AiOutlineBell } from 'react-icons/ai'
 import { BiEnvelope } from 'react-icons/bi'
 
+import ThemeTogger from '../ThemeTogger'
 import LoginButton from './LoginButton'
 import LogoutButton from './LogoutButton'
-import ThemeTogger from './themeTogger'
 
 export default function AccountMenu() {
   const { isAuthenticated, user } = useAuth0()
