@@ -1,7 +1,6 @@
 import { IconType } from 'react-icons'
 import {
   AiOutlineCalendar,
-  AiOutlineCreditCard,
   AiOutlineHome,
   AiOutlineShoppingCart,
   AiOutlineTeam,

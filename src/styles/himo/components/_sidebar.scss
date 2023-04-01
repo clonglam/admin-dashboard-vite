@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 $sidebar-opened-width: 200px;
-$sidebar-closed-width: 80px;
+$sidebar-closed-width: 64px;
 
 %flex-layout {
   width: 100%;
@@ -23,7 +23,7 @@ $sidebar-closed-width: 80px;
   // left: 0; /* default closed position */
   width: $sidebar-closed-width;
   padding: $base-padding $base-padding;
-  background: #222;
+  background: #243143;
   color: #fff;
   transition: width 0.3s ease-in-out;
   z-index: 997;
@@ -45,13 +45,20 @@ $sidebar-closed-width: 80px;
 
   .item-icon {
     position: inline;
+    width: $sidebar-closed-width;
+    transition: width 0.3s ease-in;
     max-width: $sidebar-closed-width;
+    color: #888;
   }
 }
 
 .sidebar.open {
   left: 0; /* move to show sidebar when open */
   width: 200px;
+
+  .item-icon {
+    width: 20px;
+  }
 }
 
 .sidebar-content {

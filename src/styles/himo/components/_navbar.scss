@@ -12,19 +12,21 @@
   top: 0;
   left: 0; /* default closed position */
   width: 100%;
-  padding: $base-padding $base-padding;
-  background: #222;
   color: #fff;
   transition: width 0.3s ease-in-out;
+  box-shadow: 0;
   z-index: 999;
   @extend %flex-layout;
-  padding: $base-padding $base-padding * 2;
+  padding: $base-padding 0;
   box-shadow: $base-box-shadow;
   .site-title {
     font-size: $font-size-lg;
   }
   .container {
     @extend %flex-layout;
+  }
+  .nav-toggler {
+    width: 64px;
   }
 }
 

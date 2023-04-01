@@ -25,7 +25,7 @@ const Sider = ({ open }: Props): JSX.Element => {
     setMenu((state) => ({ ...state, key }))
   }
 
-  const openMenu: any = (v: string[]) => {
+  const openMenu = (v: string[]) => {
     setMenu((state) => ({ ...state, openKeys: v }))
   }
 
