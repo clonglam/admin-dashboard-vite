@@ -4,7 +4,7 @@ import { CiSquareRemove } from 'react-icons/ci'
 import { FaEdit } from 'react-icons/fa'
 import { NumericFormat } from 'react-number-format'
 
-import Layout from '../components/Layout'
+import Layout from '../components/layoutComponents/Layout'
 import CustomTable from '../components/ReactTable/CustomTable'
 import { mockOrderData, OrderStatus, PaymentMethod } from '../data/mockdata'
 import { tokens } from '../styles/theme'

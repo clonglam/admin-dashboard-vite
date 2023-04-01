@@ -1,7 +1,7 @@
 import { Box, useTheme } from '@mui/material'
 import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 
-import Layout from '../components/Layout'
+import Layout from '../components/layoutComponents/Layout'
 import { mockDataContacts } from '../data/mockdata'
 import { tokens } from '../styles/theme'
 

@@ -17,7 +17,7 @@ import {
 import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import Layout from '../components/Layout'
+import Layout from '../components/layoutComponents/Layout'
 import { tokens } from '../styles/theme'
 
 const GENDERS = ['Male', 'Female'] as const
