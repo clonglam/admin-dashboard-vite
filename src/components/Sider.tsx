@@ -1,80 +1,50 @@
-import { Box, List, Typography, useTheme } from '@mui/material'
-import { IconType } from 'react-icons'
-import { AiOutlineHome, AiOutlineTeam } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Box, useTheme } from '@mui/material'
+import { useState } from 'react'
 
+import routes from '../routes/config'
 import { tokens } from '../styles/theme'
+import SiderMenu from './SiderMenu'
 
 interface Props {
   open: boolean
 }
-interface IFMenu {
-  key: string
-  title: string
-  icon: IconType
-  component: string
+
+interface IMenu {
+  openKeys: string[]
+  selectedKey: string
 }
-const menus = [
-  {
-    key: '/app/dashboard/index',
-    title: 'Dashboard',
-    icon: AiOutlineHome,
-    component: '/dashboard',
-  },
-  {
-    key: '/app/dashboard/team',
-    title: 'Team',
-    icon: AiOutlineTeam,
-    component: '/team',
-  },
-  {
-    key: '/app/member',
-    title: 'Member',
-    icon: AiOutlineTeam,
-    component: '/member',
-  },
-  {
-    key: '/app/Orders',
-    title: 'Orders',
-    icon: AiOutlineTeam,
-    component: '/orders',
-  },
-  {
-    key: '/app/Calendar',
-    title: 'Calendar',
-    icon: AiOutlineTeam,
-    component: '/calendar',
-  },
-  {
-    key: '/app/ApplicationForm',
-    title: 'ApplicationForm',
-    icon: AiOutlineTeam,
-    component: '/applicationform',
-  },
-]
 
 const Sider = ({ open }: Props): JSX.Element => {
+  const [menu, setMenu] = useState<IMenu>({ openKeys: [''], selectedKey: '' })
+
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
 
+  const menuClick = (key: string) => {
+    console.log('Cliecked', key)
+    setMenu((state) => ({ ...state, key }))
+  }
+
+  const openMenu: any = (v: string[]) => {
+    setMenu((state) => ({ ...state, openKeys: v }))
+  }
+
   return (
-    <Box sx={{ backgroundColor: colors.primary[600] }}>
-      <List>
-        <div className="sidebar-content">
-          {menus.map((item: IFMenu) => (
-            <Link to={item.component} key={item.key} className="container">
-              <span className="item-icon">
-                {item.icon != null && <item.icon color={colors.grey[100]} />}
-              </span>
-              {open && (
-                <Typography className="item-text" color={colors.grey[100]}>
-                  {item.title}{' '}
-                </Typography>
-              )}
-            </Link>
-          ))}
-        </div>
-      </List>
+    <Box
+      sx={{
+        height: '100%',
+        width: '200px',
+        bgcolor: colors.primary[600],
+      }}
+    >
+      <SiderMenu
+        menus={[...routes.menus]}
+        onClick={menuClick}
+        open={open}
+        selectedKeys={[menu.selectedKey]}
+        openKeys={menu.openKeys}
+        onOpenChange={openMenu}
+      />
     </Box>
   )
 }

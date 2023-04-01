@@ -1,17 +1,18 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import { useMemo } from 'react'
-import { Route, Routes } from 'react-router-dom'
 
+// import { Route, Routes } from 'react-router-dom'
 import { useAppSelector } from './app/hooks'
 import NavMenu from './components/NavMenu'
 import Sider from './components/Sider'
 import { selectColorMode, selectMenuState } from './features/state/stateSlice'
-import ApplicationForm from './pages/ApplicationForm'
-import Calendar from './pages/Calendar'
-import Dashboard from './pages/Dashboard'
-import Member from './pages/Member'
-import Orders from './pages/Orders'
-import Team from './pages/Team'
+import Routes from './routes'
+// import ApplicationForm from './pages/ApplicationForm'
+// import Calendar from './pages/Calendar'
+// import Dashboard from './pages/Dashboard'
+// import Members from './pages/Members'
+// import Orders from './pages/Orders'
+// import Team from './pages/Team'
 import { getDesignTokens, tokens } from './styles/theme'
 
 function App() {
@@ -41,15 +42,16 @@ function App() {
 
         {/* Main content */}
         <main className="main" style={{ background: colors.primary[800] }}>
-          <Routes>
+          <Routes />
+          {/* <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/team" element={<Team />} />
-            <Route path="/member" element={<Member />} />
+            <Route path="/member" element={<Members />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/applicationform" element={<ApplicationForm />} />
-          </Routes>
+          </Routes> */}
         </main>
 
         {/* Footer */}

@@ -27,6 +27,26 @@ $sidebar-closed-width: 80px;
   color: #fff;
   transition: width 0.3s ease-in-out;
   z-index: 997;
+
+  .container {
+    height: 40px;
+    max-height: 40px;
+    gap: 0 $base-padding;
+    flex-direction: row;
+    @extend %flex-layout;
+  }
+
+  .item-text {
+    // padding: 10px;
+    font-size: $font-size-md;
+    overflow: hidden;
+    display: inline;
+  }
+
+  .item-icon {
+    position: inline;
+    max-width: $sidebar-closed-width;
+  }
 }
 
 .sidebar.open {
@@ -48,24 +68,6 @@ $sidebar-closed-width: 80px;
 
   ::-webkit-scrollbar-thumb {
     width: 0;
-  }
-
-  .container {
-    height: 40px;
-    max-height: 40px;
-    gap: 0 $base-padding;
-    @extend %flex-layout;
-  }
-
-  .item-text {
-    // padding: 10px;
-    font-size: $font-size-md;
-    overflow: hidden;
-  }
-
-  .item-icon {
-    position: inline;
-    max-width: $sidebar-closed-width;
   }
 }
 
