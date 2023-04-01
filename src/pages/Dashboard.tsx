@@ -2,8 +2,9 @@ import { Box, Grid, Typography, useTheme } from '@mui/material'
 import _ from 'lodash'
 
 import StatSmallCard from '../components/cards/StatSmallCard'
+import BarChart from '../components/charts/BarChart'
+import LineEChart from '../components/charts/LineEChart'
 import Layout from '../components/Layout'
-import LineEChart from '../components/LineEChart'
 import PieChart from '../components/PieChart'
 import { DashboardDataType, data } from '../data/mockdata'
 import { tokens } from '../styles/theme'
@@ -43,9 +44,9 @@ const Dashboard = () => {
             <LineEChart />
           </Box>
         </Grid>
-      </Grid>
+        {/* </Grid> */}
 
-      <Grid container>
+        {/* <Grid container spacing={2}> */}
         <Grid item xs={12} md={4}>
           <Box borderRadius={2} p={3} sx={{ background: colors.primary[600] }}>
             <Typography variant="body1" mb={3}>
@@ -54,7 +55,15 @@ const Dashboard = () => {
             <PieChart />
           </Box>
         </Grid>
-        <Grid item xs={12} md={8}></Grid>
+
+        <Grid item xs={12} md={8}>
+          <Box borderRadius={2} p={3} sx={{ background: colors.primary[600] }}>
+            <Typography variant="body1" mb={3}>
+              Traffic Acquisition
+            </Typography>
+            <BarChart />
+          </Box>
+        </Grid>
       </Grid>
     </Layout>
   )

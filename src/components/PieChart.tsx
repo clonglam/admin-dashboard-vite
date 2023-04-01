@@ -103,7 +103,6 @@ const PieChart = () => {
   return (
     <ReactECharts
       option={option}
-      style={{ height: 400 }}
       onChartReady={onChartReady}
       onEvents={{
         click: onChartClick,

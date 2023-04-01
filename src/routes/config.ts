@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons'
 import {
   AiOutlineCalendar,
+  AiOutlineFundProjectionScreen,
   AiOutlineHome,
   AiOutlineShoppingCart,
   AiOutlineTeam,
@@ -50,6 +51,12 @@ const menus: {
       title: 'Orders',
       component: 'Orders',
       icon: AiOutlineShoppingCart,
+    },
+    {
+      key: '/projects',
+      title: 'Projects',
+      component: 'Projects',
+      icon: AiOutlineFundProjectionScreen,
     },
   ],
   others: [],

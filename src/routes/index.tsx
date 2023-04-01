@@ -6,6 +6,7 @@ import Calendar from '../pages/Calendar'
 import Dashboard from '../pages/Dashboard'
 import Members from '../pages/Members'
 import Orders from '../pages/Orders'
+import Projects from '../pages/Projects'
 
 const index = () => {
   return (
@@ -17,6 +18,7 @@ const index = () => {
       <Route path="/orders" element={<Orders />} />
       <Route path="/calendar" element={<Calendar />} />
       <Route path="/applicationform" element={<ApplicationForm />} />
+      <Route path="/projects" element={<Projects />} />
     </Routes>
   )
 }

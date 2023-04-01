@@ -153,7 +153,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
         ? {
             // palette values for dark mode
             primary: {
-              main: colors.primary[500],
+              main: colors.grey[100],
             },
             secondary: {
               main: colors.greenAccent[500],
@@ -170,7 +170,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
         : {
             // palette values for light mode
             primary: {
-              main: '#fff',
+              main: colors.grey[100],
             },
             secondary: {
               main: colors.greenAccent[500],

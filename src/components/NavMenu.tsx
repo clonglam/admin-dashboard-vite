@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { useAppDispatch } from '../app/hooks'
 import { toggleSideMenu } from '../features/state/stateSlice'
 import { tokens } from '../styles/theme'
-import AccountMenu from './accountMenu'
+import AccountMenu from './AccountMenu'
 
 const NavMenu = (): JSX.Element => {
   const dispatch = useAppDispatch()
