@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$sidebar-opened-width: 200px;
+$sidebar-opened-width: 180px;
 $sidebar-closed-width: 64px;
 
 %flex-layout {
@@ -25,7 +25,7 @@ $sidebar-closed-width: 64px;
   padding: $base-padding $base-padding;
   background: #243143;
   color: #fff;
-  transition: width 0.3s ease-in-out;
+  // transition: width 0.3s ease-in-out;
   z-index: 997;
 
   .container {
@@ -54,7 +54,7 @@ $sidebar-closed-width: 64px;
 
 .sidebar.open {
   left: 0; /* move to show sidebar when open */
-  width: 200px;
+  width: $sidebar-opened-width;
 
   .item-icon {
     width: 20px;

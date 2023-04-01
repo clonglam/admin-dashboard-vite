@@ -32,8 +32,8 @@ const Sider = ({ open }: Props): JSX.Element => {
   return (
     <Box
       sx={{
-        height: '100%',
-        width: '200px',
+        height: '100vh',
+        zIndex: 999,
         bgcolor: colors.primary[600],
       }}
     >
