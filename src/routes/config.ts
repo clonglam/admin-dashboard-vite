@@ -34,13 +34,6 @@ const menus: {
       component: 'Dashboard',
     },
     {
-      key: '/calendar',
-      title: 'Calendar',
-      icon: AiOutlineCalendar,
-      component: 'Calendar',
-    },
-
-    {
       key: '/members',
       title: 'Members',
       component: 'Members',
@@ -57,6 +50,12 @@ const menus: {
       title: 'Projects',
       component: 'Projects',
       icon: AiOutlineFundProjectionScreen,
+    },
+    {
+      key: '/calendar',
+      title: 'Calendar',
+      icon: AiOutlineCalendar,
+      component: 'Calendar',
     },
   ],
   others: [],

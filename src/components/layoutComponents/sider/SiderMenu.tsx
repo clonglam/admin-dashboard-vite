@@ -2,8 +2,8 @@ import { Box, List, Typography, useTheme } from '@mui/material'
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
 
-import { IFMenu } from '../routes/config'
-import { tokens } from '../styles/theme'
+import { IFMenu } from '../../../routes/config'
+import { tokens } from '../../../styles/theme'
 
 type SiderMenuProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
