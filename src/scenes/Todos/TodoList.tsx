@@ -17,7 +17,7 @@ const TodoList = () => {
   const [todos, setTodos] = useState<Todo[]>([])
 
   useEffect(() => {
-    axios('http://jsonplaceholder.typicode.com/todos')
+    axios('https://jsonplaceholder.typicode.com/todos')
       .then((res) => setTodos(res.data))
       .catch((err) => {
         console.log('Error', err)
