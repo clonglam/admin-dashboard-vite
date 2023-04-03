@@ -1,11 +1,14 @@
 import { IconType } from 'react-icons'
 import {
   AiOutlineCalendar,
+  AiOutlineCloud,
+  AiOutlineFile,
   AiOutlineFundProjectionScreen,
   AiOutlineHome,
   AiOutlineShoppingCart,
   AiOutlineTeam,
 } from 'react-icons/ai'
+import { BsBrush } from 'react-icons/bs'
 
 export interface IFMenuBase {
   key: string
@@ -56,6 +59,24 @@ const menus: {
       title: 'Calendar',
       icon: AiOutlineCalendar,
       component: 'Calendar',
+    },
+    {
+      key: '/todos',
+      title: 'Todos',
+      icon: AiOutlineCloud,
+      component: 'Todos',
+    },
+    {
+      key: '/scss',
+      title: 'SCSS',
+      icon: BsBrush,
+      component: 'Scss',
+    },
+    {
+      key: '/docs',
+      title: 'Documentation',
+      icon: AiOutlineFile,
+      component: 'Documentation',
     },
   ],
   others: [],

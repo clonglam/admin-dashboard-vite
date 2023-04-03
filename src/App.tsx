@@ -1,11 +1,11 @@
 import {
-  Box,
   createTheme,
   CssBaseline,
   Link,
   ThemeProvider,
   Typography,
 } from '@mui/material'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useMemo } from 'react'
 
 import { useAppSelector } from './app/hooks'
@@ -18,6 +18,7 @@ import { getDesignTokens, tokens } from './styles/theme'
 function App() {
   const isMenuOpen = useAppSelector(selectMenuState)
   const colorMode = useAppSelector(selectColorMode)
+  const queryClient = new QueryClient()
 
   const theme = useMemo(
     () => createTheme(getDesignTokens(colorMode)),
@@ -27,43 +28,45 @@ function App() {
   const colors = tokens(theme.palette.mode)
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className="layout">
-        {/* Header */}
-        <header className="header">
-          <NavMenu />
-        </header>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="layout">
+          {/* Header */}
+          <header className="header">
+            <NavMenu />
+          </header>
 
-        {/* Sidebar */}
-        <aside className={` ${isMenuOpen && 'open'}`}>
-          <Sider open={isMenuOpen} />
-        </aside>
+          {/* Sidebar */}
+          <aside className={` ${isMenuOpen && 'open'}`}>
+            <Sider open={isMenuOpen} />
+          </aside>
 
-        {/* Main content */}
-        <main
-          style={{ background: colors.primary[800] }}
-          className={`main ${isMenuOpen && 'open'} `}
-        >
-          <Routes />
-        </main>
-
-        {/* Footer */}
-        <footer className="footer">
-          <Typography style={{ display: 'inline-block' }}>
-            {' '}
-            {`Project Design by  `}{' '}
-          </Typography>
-          <Link
-            style={{ textAlign: 'center' }}
-            href="https://github.com/clonglam/admin-dashboard-vite"
+          {/* Main content */}
+          <main
+            style={{ background: colors.primary[800] }}
+            className={`main ${isMenuOpen && 'open'} `}
           >
-            {` Hugo`}.
-          </Link>
-          {}
-        </footer>
-      </div>
-    </ThemeProvider>
+            <Routes />
+          </main>
+
+          {/* Footer */}
+          <footer className="footer">
+            <Typography style={{ display: 'inline-block' }}>
+              {' '}
+              {`Project Design by  `}{' '}
+            </Typography>
+            <Link
+              style={{ textAlign: 'center' }}
+              href="https://github.com/clonglam/admin-dashboard-vite"
+            >
+              {` Hugo`}.
+            </Link>
+            {}
+          </footer>
+        </div>
+      </ThemeProvider>
+    </QueryClientProvider>
   )
 }
 
