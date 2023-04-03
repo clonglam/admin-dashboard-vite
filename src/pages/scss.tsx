@@ -105,7 +105,7 @@ const scss = () => {
         <div className="row gap-2 justify-center">
           <div className="col-12-xs col-5-sm col-3-xl">
             <div className="card">
-              <h3 className="card-title">Hello, ninjas</h3>
+              <h3 className="card-title">Hello, Guys</h3>
               <p className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
@@ -113,7 +113,7 @@ const scss = () => {
           </div>
           <div className="col-12-xs col-5-sm col-3-xl">
             <div className="card">
-              <h3 className="card-title">Hello, ninjas</h3>
+              <h3 className="card-title">Hello, Guys</h3>
               <p className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
@@ -121,7 +121,7 @@ const scss = () => {
           </div>
           <div className="col-12-xs col-5-sm col-3-xl">
             <div className="card">
-              <h3 className="card-title">Hello, ninjas</h3>
+              <h3 className="card-title">Hello, Guys</h3>
               <p className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
@@ -129,7 +129,7 @@ const scss = () => {
           </div>
           <div className="col-12-xs col-5-sm col-3-xl">
             <div className="card">
-              <h3 className="card-title">Hello, ninjas</h3>
+              <h3 className="card-title">Hello, Guys</h3>
               <p className="card-body">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
