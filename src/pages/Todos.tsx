@@ -1,5 +1,5 @@
 import Layout from '../components/layoutComponents/Layout'
-import TodoList from '../scenes/Todos/todoList'
+import TodoList from '../scenes/Todos/TodoList'
 
 export type Todo = {
   userId: number | string

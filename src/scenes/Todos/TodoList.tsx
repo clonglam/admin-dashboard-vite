@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid'
 import { useEffect, useRef, useState } from 'react'
 
 import { Todo } from '../../pages/Todos'
-import TodoDialog from './todoDialog'
+import TodoDialog from './TodoDialog'
 
 const TodoList = () => {
   const ref = useRef<HTMLInputElement>(null)
